@@ -35,7 +35,7 @@ public class UsuarioController {
 			List<String> errors = result.getFieldErrors().stream()
 					.map(err -> "Error en el campo '" + err.getField() + "' :" + err.getDefaultMessage())
 					.collect(Collectors.toList());
-			response.put("errors", errors);
+			response.put("mensaje", errors);
 
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
 		}
